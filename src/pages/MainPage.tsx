@@ -10,7 +10,7 @@ const MainPage = () => {
           <div className="flex flex-col gap-8 p-8 h-full justify-center items-center">
             <img src={welcome} alt="Welcome" />
             <div className="text-xl font-semibold">OGS Daily News</div>
-            <Button to="/site" color="slate">
+            <Button to="/site" color={true}>
               เข้าสู่เว็ปไซต์
             </Button>
           </div>

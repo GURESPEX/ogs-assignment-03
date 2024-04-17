@@ -1,11 +1,10 @@
 import { AnimatePresence } from "framer-motion";
 import RouterComponent from "@routes/RouterComponent";
+import { pageTransition } from "@transitions/transitions";
 
 const App = () => {
   return (
-    <AnimatePresence>
-      <RouterComponent />
-    </AnimatePresence>
+    <AnimatePresence>{pageTransition(<RouterComponent />)}</AnimatePresence>
   );
 };
 

@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 interface Props {
   to: string;
   pathHighlight?: boolean;
-  color?: "slate" | "cyan";
+  color?: boolean;
   children: ReactNode;
 }
 
@@ -14,9 +14,7 @@ const Button = ({ to, pathHighlight = false, color, children }: Props) => {
     <Link to={to}>
       <button
         className={`px-4 py-2 rounded transition ${
-          color
-            ? `bg-${color}-900 hover:bg-${color}-800 active:bg-${color}-700`
-            : ""
+          color ? `bg-slate-900 hover:bg-slate-800 active:bg-slate-700` : ""
         } font-semibold ${
           pathHighlight
             ? `${
