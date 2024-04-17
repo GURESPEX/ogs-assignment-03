@@ -6,7 +6,7 @@ interface Props {
 
 const NewsCard = ({ nt }: Props) => {
   return (
-    <div className="flex flex-col p-4 gap-2 border rounded hover:bg-slate-50 active:bg-slate-100 transition">
+    <div className="flex flex-col p-4 gap-2 border rounded bg-white hover:bg-slate-50 active:bg-slate-100 transition drop-shadow-sm">
       <div className="text-sm text-slate-400 font-semibold">{nt.date}</div>
       <h3 className="text-xl font-semibold">{nt.headline}</h3>
       <div className="line-clamp-3">{nt.content}</div>

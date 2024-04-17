@@ -1,13 +1,13 @@
 import Logo from "@assets/react.svg";
-import { Outlet, Link, useLocation } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import { data_new } from "@data/data_new";
 import { TypeNew } from "types/type";
+import Button from "@components/Button";
 
 const HomeLayout = () => {
-  const { pathname } = useLocation();
   return (
     <div className="flex flex-col w-screen h-screen overflow-hidden">
-      <div className="flex flex-col items-center bg-slate-200 border-b border-slate-300">
+      <div className="flex flex-col items-center bg-cyan-800 drop-shadow-sm">
         <nav className="container p-8">
           <ul className="flex flex-row items-center gap-8 font-semibold">
             <li>
@@ -16,37 +16,20 @@ const HomeLayout = () => {
               </Link>
             </li>
             <li>
-              <Link
-                className={`${
-                  "/site" === pathname ? "text-cyan-400" : "text-black"
-                } transition hover:text-cyan-600 active:text-cyan-400`}
-                to="/site"
-              >
-                <button className="flex flex-row px-4 py-2">หน้าแรก</button>
-              </Link>
+              <Button pathHighlight={true} to="/site">
+                หน้าแรก
+              </Button>
             </li>
             <li>
-              <Link
-                className={`${
-                  "/site/news" === pathname ? "text-cyan-400" : "text-black"
-                } transition hover:text-cyan-600 active:text-cyan-400`}
-                to="/site/news"
-              >
-                <button className="flex flex-row px-4 py-2">ข่าวทั้งหมด</button>
-              </Link>
+              <Button pathHighlight={true} to="/site/news">
+                ข่าวทั้งหมด
+              </Button>
             </li>
             {data_new[0].type_new.map((tn: TypeNew) => (
               <li key={tn.id}>
-                <Link
-                  className={`${
-                    `/site/news/${tn.id}` === pathname
-                      ? "text-cyan-400"
-                      : "text-black"
-                  } transition hover:text-cyan-600 active:text-cyan-400`}
-                  to={`/site/news/${tn.id}`}
-                >
-                  <button className="flex flex-row px-4 py-2">{tn.name}</button>
-                </Link>
+                <Button pathHighlight={true} to={`/site/news/${tn.id}`}>
+                  {tn.name}
+                </Button>
               </li>
             ))}
           </ul>
