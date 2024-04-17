@@ -4,6 +4,7 @@ import { NewsType, TypeNew } from "types/type";
 
 const DetailNew = () => {
   const { newsId, newsDetailId } = useParams();
+  const [searchParams] = useSearchParams();
 
   const newsDetail: NewsType = data_new[0].type_new
     .filter((tn: TypeNew) => {
@@ -29,14 +30,14 @@ const DetailNew = () => {
       }
     })[0];
 
-  const [searchParams] = useSearchParams();
-
   return (
     <div className="flex flex-col p-8 gap-8">
       <div className="flex flex-row justify-end">
         ผู้เข้าชม : {searchParams.get("viewer")}
       </div>
-      <h2 className="text-3xl font-bold">รายละเอียด{newsDetail.headline}</h2>
+      <h2 className="text-3xl font-bold border-l-4 pl-4 border-cyan-200">
+        รายละเอียด{newsDetail.headline}
+      </h2>
       <div className="flex flex-col gap-2 p-8 border rounded">
         <div>รหัสข่าว : {newsDetail.id}</div>
         <div>วันที่ลงข่าว : {newsDetail.date}</div>
