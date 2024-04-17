@@ -3,9 +3,11 @@ import { Outlet, Link } from "react-router-dom";
 import { data_new } from "@data/data_new";
 import { TypeNew } from "types/type";
 import Button from "@components/Button";
+import { AnimatePresence } from "framer-motion";
+import { pageTransition } from "@transitions/transitions";
 
 const HomeLayout = () => {
-  return (
+  return pageTransition(
     <div className="flex flex-col w-screen h-screen overflow-hidden">
       <div className="flex flex-col items-center bg-cyan-800 drop-shadow-sm">
         <nav className="container p-8">
@@ -37,7 +39,9 @@ const HomeLayout = () => {
       </div>
       <div className="flex flex-col items-center overflow-auto no-scrollbar">
         <div className="container">
-          <Outlet />
+          <AnimatePresence>
+            <Outlet />
+          </AnimatePresence>
         </div>
       </div>
     </div>

@@ -2,9 +2,10 @@ import { data_new } from "@data/data_new";
 import { Link } from "react-router-dom";
 import { NewsType, TypeNew } from "types/type";
 import NewsCard from "@components/NewsCard";
+import { pageTransition } from "@transitions/transitions";
 
 const HomePage = () => {
-  return (
+  return pageTransition(
     <div className="flex flex-col p-8 gap-8">
       <div className="flex flex-col p-8 gap-8 border rounded bg-cyan-200 border-cyan-300 text-cyan-800 drop-shadow-sm">
         <h1 className="text-3xl font-bold">{data_new[0].title}</h1>

@@ -8,6 +8,7 @@
       "@layouts/*": ["layouts/*"],
       "@pages/*": ["pages/*"],
       "@routes/*": ["routes/*"],
+      "@transitions/*": ["transitions/*"],
       "@data/*": ["data/*"]
     },
 

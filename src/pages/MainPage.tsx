@@ -1,8 +1,9 @@
 import Button from "@components/Button";
 import welcome from "@assets/welcome.svg";
+import { pageTransition } from "@transitions/transitions";
 
 const MainPage = () => {
-  return (
+  return pageTransition(
     <div className="flex flex-col w-screen h-screen overflow-hidden">
       <div className="flex flex-col items-center h-full">
         <div className="container p-8 h-full">
