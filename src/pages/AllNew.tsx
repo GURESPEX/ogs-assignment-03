@@ -1,14 +1,30 @@
 import NewsCard from "@components/NewsCard";
 import { data_new } from "@data/data_new";
-import { Link, useParams } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { NewsType, TypeNew } from "types/type";
 
 const AllNew = () => {
   const params = useParams();
+  const navigate = useNavigate();
   const newsId = params?.newsId;
 
+  useEffect(() => {
+    const foundedTypeIndex = data_new[0].type_new.findIndex(
+      (tn: TypeNew) => tn.id === parseInt(newsId as string)
+    );
+    if (newsId !== undefined && foundedTypeIndex < 0) {
+      navigate("/error/404");
+    }
+  });
+
   return (
-    <div className="flex flex-col p-8 gap-8">
+    <div className="flex flex-col p-8 gap-16">
+      {!newsId && (
+        <div className="flex flex-row justify-end font-semibold">
+          รวมข่าวทั้งหมด
+        </div>
+      )}
       {data_new[0].type_new
         .filter((tn: TypeNew) => {
           if (newsId) {

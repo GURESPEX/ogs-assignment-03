@@ -4,10 +4,10 @@ import { pageTransition } from "@transitions/transitions";
 
 const MainPage = () => {
   return pageTransition(
-    <div className="flex flex-col w-screen h-screen overflow-hidden">
+    <div className="flex flex-col w-screen h-screen overflow-hidden bg-gradient-to-t from-white to-cyan-100">
       <div className="flex flex-col items-center h-full">
         <div className="container p-8 h-full">
-          <div className="flex flex-col gap-8 p-8 h-full justify-center items-center">
+          <div className="flex flex-col gap-8 p-8 h-full justify-center items-center border rounded bg-white drop-shadow-sm">
             <img src={welcome} alt="Welcome" />
             <div className="text-xl font-semibold">OGS Daily News</div>
             <Button to="/site" color={true}>

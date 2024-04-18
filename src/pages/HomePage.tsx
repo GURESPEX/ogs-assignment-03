@@ -5,10 +5,10 @@ import NewsCard from "@components/NewsCard";
 
 const HomePage = () => {
   return (
-    <div className="flex flex-col p-8 gap-8">
-      <div className="flex flex-col p-8 gap-8 border rounded bg-cyan-200 border-cyan-300 text-cyan-800 drop-shadow-sm">
+    <div className="flex flex-col p-8 gap-16">
+      <div className="flex flex-col p-8 gap-8 border rounded bg-slate-100 drop-shadow-sm">
         <h1 className="text-3xl font-bold">{data_new[0].title}</h1>
-        <hr className="border-cyan-300" />
+        <hr />
         <div className="text-xl">{data_new[0].sub_title}</div>
       </div>
       {data_new[0].type_new.map((tn: TypeNew) => (

@@ -16,9 +16,7 @@ const RouterComponent = () => {
         <Route path="news/:newsId/:newsDetailId" element={<DetailNew />} />
       </Route>
       <Route path="*" element={<NotFound />} />
-      <Route path="*/*" element={<NotFound />} />
-      <Route path="*/*/*" element={<NotFound />} />
-      <Route path="*/*/*/*" element={<NotFound />} />
+      <Route path="error/404" element={<NotFound />} />
     </Routes>
   );
 };

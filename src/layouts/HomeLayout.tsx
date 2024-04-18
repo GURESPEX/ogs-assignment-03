@@ -11,7 +11,7 @@ const HomeLayout = () => {
 
   return (
     <div className="flex flex-col w-screen h-screen overflow-hidden">
-      <div className="flex flex-col items-center bg-cyan-800 drop-shadow-sm">
+      <div className="flex flex-col items-center bg-black drop-shadow-sm">
         <nav className="container p-8">
           <ul className="flex flex-row items-center gap-8 font-semibold">
             <li>
